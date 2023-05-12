@@ -32,7 +32,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppComponent implements OnInit {
   ele!: ElementRef<any>;
   title = 'Aurelis Grow';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    window.addEventListener('scroll', () => {
+      let animationClasses = document.querySelectorAll(
+        '.lReveal , .dReveal,.uReveal,.rReveal'
+      );
+      animationClasses.forEach((e) => {
+        if (e.getBoundingClientRect().top < 600) {
+          e.classList.add('reveal');
+        } else {
+          e.classList.remove('reveal');
+        }
+      });
+    });
+  }
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
       this.activeMenu = false;
@@ -108,15 +121,7 @@ export class AppComponent implements OnInit {
   reflectActiveMenu() {
     this.activeMenu = !this.activeMenu;
   }
-  // lang
-  // lang: string = 'en';
-  // setLang = async (lang: any) => {
-  //   this.lang = lang;
-  //   document.documentElement.lang = lang;
-  //   localStorage.setItem('lang', lang);
-  //   this.translate.setDefaultLang(lang);
-  //   this.translate.use(lang);
-  // };
+
   services: any = [
     {
       name: 'Paid Advertising',

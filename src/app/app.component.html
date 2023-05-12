@@ -1,7 +1,7 @@
 <header class="relative py-2">
   <div class="container flex items-center justify-between">
     <a id="home" href="">
-      <img src="assets/logo.png" alt="logo">
+      <img class="w-40 md:w-64" src="assets/logo.png" alt="logo">
     </a>
     <nav>
       <ul [ngClass]="{active:activeMenu}" class="flex font-medium text-lg gap-12 ">
@@ -11,23 +11,23 @@
           </a>
         </li>
         <li style="--d:2">
-          <a href="#aboutUs">
+          <a href="#videoContent">
             {{'Video Content' }}
           </a>
         </li>
         <li style="--d:3">
-          <a href="#services">
+          <a href="#softwear">
             {{'CRM Software' }}
           </a>
         </li>
         <li style="--d:4">
-          <a href="#contact">
+          <a href="#videoContent">
             {{'Testimonials' }}
           </a>
         </li>
       </ul>
     </nav>
-    <a href="" class="hidden md:block">
+    <a href="" class="hidden md:block insta">
       <img src="../assets/instagram.svg" alt="">
     </a>
 
@@ -115,16 +115,16 @@
     some of our <br>
     trusted clients
   </div>
-  <div class="overflow-hidden w-3/4 flex relative items-center h-20">
+  <div class="overflow-hidden w-3/4 flex relative items-center h-28">
     <div class="flex w-full absolute left-0 justify-around movement">
-      <img class="w-20" src="../assets/Rectangle.png" alt="">
-      <img class="w-20" src="../assets/Rectangle-1.png" alt="">
-      <img class="w-20" src="../assets/Untitled_design__2___1_-removebg-preview 1.png" alt="">
+      <img class="w-28" src="../assets/Rectangle.png" alt="">
+      <img class="w-28" src="../assets/Rectangle-1.png" alt="">
+      <img class="w-28" src="../assets/Untitled_design__2___1_-removebg-preview 1.png" alt="">
     </div>
     <div class="flex w-full absolute left-full justify-around movement2">
-      <img class="w-20" src="../assets/Rectangle.png" alt="">
-      <img class="w-20" src="../assets/Rectangle-1.png" alt="">
-      <img class="w-20" src="../assets/Untitled_design__2___1_-removebg-preview 1.png" alt="">
+      <img class="w-28" src="../assets/Rectangle.png" alt="">
+      <img class="w-28" src="../assets/Rectangle-1.png" alt="">
+      <img class="w-28" src="../assets/Untitled_design__2___1_-removebg-preview 1.png" alt="">
     </div>
   </div>
 </div>
@@ -132,13 +132,13 @@
 
 <div id="services">
   <div class="container py-10">
-    <div class="text-center text-2xl md:text-4xl font-extrabold py-10">
+    <div class="text-center text-2xl md:text-4xl font-extrabold py-10 dReveal">
       <span>
         WHAT WE OFFER
       </span>
     </div>
     <div class="services-boxs pt-10 grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-x-16 gap-y-8">
-      <div class="rounded-2xl bg-sec text-white px-5 py-8 flex flex-col gap-5 items-center text-center"
+      <div class="dReveal rounded-2xl bg-sec text-white px-5 py-8 flex flex-col gap-5 items-center text-center"
         *ngFor="let service of services">
         <img class="h-16 md:w-20 my-5" src="{{'assets/services/'+service.icon}}" alt="">
         <h3 class="text-xl md:text-3xl font-bold uppercase">
@@ -147,7 +147,7 @@
         <p class="text-sm md:text-lg h-24">
           {{service.dis }}</p>
         <a href="{{service.to}}"
-          class="py-3 px-8 rounded-full border border-white duration-300 hover:-translate-y-3 md:text-lg">Find Out
+          class="py-3 px-8 rounded-full border border-white duration-300 hover:-translate-y-3 md:text-lg ">Find Out
           More</a>
       </div>
     </div>
@@ -155,55 +155,56 @@
 </div>
 <hr>
 <div id="videoContent">
-  <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <app-video *ngFor="let data of videoContent" [data]="data"></app-video>
+  <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8 ">
+    <app-video class="dReveal" *ngFor="let data of videoContent" [data]="data"></app-video>
   </div>
 </div>
 <hr>
 <div id="advertise">
   <div class="container flex lg:flex-row flex-col py-20 gap-10">
-    <div class="md:w-1/2 mx-auto">
+    <div class="md:w-1/2 mx-auto dReveal">
       <img src="assets/advertise/advertise.svg" alt="">
     </div>
     <div class="border">
 
     </div>
     <div class="md:w-1/2 mx-auto text-center lg:text-left">
-      <img class="h-16 md:w-20 my-5 mx-auto lg:ml-0" src="assets/advertise/meta.svg" alt="">
-      <h3 class="text-xl md:text-3xl font-bold uppercase py-10">
+      <img class="dReveal h-16 md:w-20 my-5 mx-auto lg:ml-0" src="assets/advertise/meta.svg" alt="">
+      <h3 class="text-xl md:text-3xl font-bold uppercase py-10 dReveal">
         PAID ADVERTISING
       </h3>
-      <p class="text-sm md:text-lg ">
+      <p class="text-sm md:text-lg  dReveal">
         Are you tired of being the best kept secret? Being the highest quality artist or studio in your city is great,
         but sometimes it's just not enough. Our advertising methods are designed to capture the attention of your target
         audience by tapping into human behaviour, rather than simply offering generic discounts.</p>
-      <button class="btn mt-10" (click)="activeForm = true">Let’s Chat</button>
+      <button class="btn mt-10 dReveal" (click)="activeForm = true">Let’s Chat</button>
     </div>
   </div>
 </div>
 
 <div id="" class="bg-sec">
   <div class="container text-white py-20 flex lg:flex-row flex-col gap-10 items-center lg:items-stretch">
-    <div class="max-w-xl text-center lg:text-left">
-      <img class="w-16 md:w-20 mx-auto lg:ml-0" src="assets/services/videoplay.svg" alt="">
-      <h2 class="text-3xl md:text-4xl py-10">Social Media <br>
+    <div class="max-w-lg text-center lg:text-left">
+      <img class="w-16 md:w-20 mx-auto lg:ml-0 dReveal" src="assets/services/videoplay.svg" alt="">
+      <h2 class="text-3xl md:text-4xl py-10 dReveal">Social Media <br>
         Video Content</h2>
-      <p class="text-lg md:text-xl">Social media can be a major headache for Tattoo Artists. After spending all day
+      <p class="text-lg md:text-xl dReveal">Social media can be a major headache for Tattoo Artists. After spending all
+        day
         tattooing, the last
         thing you
         want to do is spend your precious free time editing, posting or worrying about your online presence. From high
         speed edits to slow build ups or engagement reels, let us handle your social media content so that you can
         unwind and do what you do best - creating Art.</p>
     </div>
-    <img class="hidden lg:block" src="assets/arrow.svg" alt="">
-    <img class="lg:hidden" src="assets/arrow2.svg" alt="">
+    <img class="hidden lg:block dReveal" src="assets/arrow.svg" alt="">
+    <img class="lg:hidden dReveal" src="assets/arrow2.svg" alt="">
     <div class="flex flex-col justify-between gap-20 lg:gap-0">
-      <div class="flex gap-10 font-extrabold items-center flex-col lg:flex-row "
+      <div class="flex gap-10 font-extrabold items-center flex-col lg:flex-row dReveal"
         *ngFor="let o of socialMediaVideoContent ;let i =index">
         <div class="w-16 h-16 flex items-center justify-center bg-primary text-white text-4xl rounded-3xl">
           0{{i+1}}
         </div>
-        <span class="lg:text-3xl text-2xl ">{{o.name}}</span>
+        <span class="lg:text-3xl text-2xl uppercase">{{o.name}}</span>
       </div>
     </div>
   </div>
@@ -211,17 +212,17 @@
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <app-video *ngFor="let data of videoContent2" [data]="data"></app-video>
+    <app-video class="dReveal" *ngFor="let data of videoContent2" [data]="data"></app-video>
   </div>
 </div>
 <hr>
 <div id="softwear">
   <div class="container py-20 grid gap-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-    <div class="border-l-8 pl-5 border-sec text-3xl font-extrabold lg:text-4xl h-max py-5 ">
+    <div class="border-l-8 pl-5 border-sec text-3xl font-extrabold lg:text-4xl h-max py-5  dReveal">
       SOFTWARE <br>
       BENEFITS
     </div>
-    <div *ngFor="let benefit of benefits" class="p-5 bg-sec rounded-3xl text-white">
+    <div *ngFor="let benefit of benefits" class="p-5 bg-sec rounded-3xl text-white dReveal">
       <h2 class="text-primary pb-5 text-xl md:text-2xl font-bold  ">{{benefit.title1}}<br>{{benefit.title}}</h2>
       <p class="">{{benefit.des}}</p>
     </div>
@@ -229,10 +230,10 @@
 </div>
 <hr>
 <div class="flex flex-col py-20 gap-14 container text-center items-center">
-  <p class="text-3xl md:text-4xl font-extrabold uppercase max-w-3xl">Remember, one studio per city. You have
+  <p class="text-3xl md:text-4xl font-extrabold uppercase max-w-3xl dReveal">Remember, one studio per city. You have
     the talent, now let’s up your income
     and win back your time.</p>
-  <a class="btn text-xl md:text-3xl px-20" href="">SCHEDULE A CALL WITH US</a>
+  <a class="btn text-xl md:text-3xl px-20  " href="">SCHEDULE A CALL WITH US</a>
 </div>
 <hr>
 <div class="text-center py-3 text-xs md:text-sm">aureliusgrow | all rights reserved {{year}} privacy policy, terms
