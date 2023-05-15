@@ -8,11 +8,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   animations: [
     trigger('lReveal', [
       transition(':enter', [
-        style({ transform: 'translateX(100%) ', opacity: 1 }),
+        style({ transform: 'translateY(20px) ', opacity: 1 }),
         animate(
           300,
           style({
-            transform: 'translateX(0%)',
+            transform: 'translateY(0%)',
             opacity: 1,
             height: '100%',
           })
@@ -20,11 +20,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
       ]),
       transition(':leave', [
         style({
-          transform: 'translateX(0%)',
+          transform: 'translateY(0%)',
           opacity: 1,
           height: '100%',
         }),
-        animate(300, style({ transform: 'translateX(100%)', opacity: 1 })),
+        animate(300, style({ transform: 'translateY(100%)', opacity: 1 })),
       ]),
     ]),
   ],
@@ -34,6 +34,18 @@ export class AppComponent implements OnInit {
   title = 'Aurelis Grow';
   constructor(private http: HttpClient) {
     window.addEventListener('scroll', () => {
+      let animationClasses = document.querySelectorAll(
+        '.lReveal , .dReveal,.uReveal,.rReveal'
+      );
+      animationClasses.forEach((e) => {
+        if (e.getBoundingClientRect().top < 600) {
+          e.classList.add('reveal');
+        } else {
+          e.classList.remove('reveal');
+        }
+      });
+    });
+    window.addEventListener('load', () => {
       let animationClasses = document.querySelectorAll(
         '.lReveal , .dReveal,.uReveal,.rReveal'
       );
