@@ -88,3 +88,15 @@ select {
   background-position: right 1rem center;
   background-size: 1em;
 }
+// swiper-slide.w-4\/5.swiper-slide-active.swiper-slide-visible {
+//   scale: 0.8;
+// }
+iframe {
+  transition: 0.5s;
+}
+.swiper-slide-prev,
+.swiper-slide-next {
+  iframe {
+    scale: 0.7;
+  }
+}

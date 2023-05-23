@@ -28,7 +28,7 @@
 }
 @layer components {
   .btn {
-    @apply px-10 py-2 font-semibold md:text-lg bg-primary text-white text-sm hover:shadow-xl duration-300 rounded-full;
+    @apply px-10 py-2 font-semibold md:text-lg bg-primary text-white text-sm hover:shadow-xl duration-300 rounded-lg;
   }
 }
 $animTime: 0.5s;

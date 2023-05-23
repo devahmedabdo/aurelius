@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -62,6 +63,59 @@ export class AppComponent implements OnInit {
     window.addEventListener('scroll', () => {
       this.activeMenu = false;
     });
+    // new Swiper('.swiper', {
+    //   // Install modules
+    //   slidesPerView: 1,
+    //   spaceBetween: 50,
+
+    //   breakpoints: {
+    //     768: {
+    //       slidesPerView: 3,
+    //       spaceBetween: 50,
+    //     },
+    //   },
+    //   // ...
+    // });
+    const swiperEl: any = document.querySelector('swiper-container');
+
+    // swiper parameters
+    const swiperParams = {
+      // effect: 'coverflow',
+      grabCursor: true,
+      // spaceBetween: 50,
+      // coverflowEffect: {
+      //   rotate: 50,
+      //   stretch: 0,
+      //   depth: 100,
+      //   modifier: 1,
+      //   slideShadows: true,
+      // },
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      // breakpoints: {
+      //   768: {
+      //     slidesPerView: 3,
+      //   },
+      //   1024: {
+      //     slidesPerView: 3,
+      //   },
+      // },
+      navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+      },
+      on: {
+        init() {
+          // ...
+        },
+      },
+    };
+
+    // now we need to assign all parameters to Swiper element
+    Object.assign(swiperEl, swiperParams);
+
+    // and now initialize it
+    swiperEl.initialize();
   }
   submit() {
     const httpOptions = {
@@ -93,6 +147,13 @@ export class AppComponent implements OnInit {
     phone: null,
     location: null,
   };
+  videosSlides: any[] = [
+    'https://www.youtube.com/embed/nFDiweNppHc',
+    'https://www.youtube.com/embed/nFDiweNppHc',
+    'https://www.youtube.com/embed/nFDiweNppHc',
+    'https://www.youtube.com/embed/nFDiweNppHc',
+    'https://www.youtube.com/embed/nFDiweNppHc',
+  ];
   increasStep() {
     // console.log(this.step);
     // console.log(this.data);
@@ -226,12 +287,14 @@ export class AppComponent implements OnInit {
       reputation management and most 
       importantly Growth. You name it 
       the software can handle it.`,
+      img: `briefcase`,
     },
     {
       title1: `Every message`,
       title: `         
       in one inbox`,
       des: `Integrate all of your social media and enquiry platforms into one inbox, so you never have to jump from app to app again.`,
+      img: `messagetext1`,
     },
     {
       title1: `Text to pay `,
@@ -240,6 +303,7 @@ export class AppComponent implements OnInit {
       des: `All your revenue in one place while
       never having to chase a client 
       for payment again.`,
+      img: `walletmoney`,
     },
     {
       title1: `Automations and`,
@@ -249,6 +313,7 @@ export class AppComponent implements OnInit {
       to enquiries while you sleep, while 
       simultaneously booking 
       in past clients.`,
+      img: `backwarditem`,
     },
     {
       title1: `Booking `,
@@ -257,6 +322,7 @@ export class AppComponent implements OnInit {
       des: `Keep clientele organized with 
       every consultation and tattoo
       session marked.`,
+      img: `calendar`,
     },
   ];
   links: any = [

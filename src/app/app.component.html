@@ -27,7 +27,7 @@
         </li>
       </ul>
     </nav>
-    <a href="" class="hidden md:block insta">
+    <a href="https://www.instagram.com/aureliusgrow/" class="hidden md:block insta">
       <img src="../assets/instagram.svg" alt="">
     </a>
 
@@ -148,7 +148,7 @@
         <p class="text-sm md:text-lg h-24">
           {{service.dis }}</p>
         <a href="{{service.to}}"
-          class="py-3 px-8 rounded-full border border-white duration-300 hover:bg-white hover:text-sec md:text-lg ">Find
+          class="py-3 px-8 rounded-lg border border-white duration-300 hover:bg-white hover:text-sec md:text-lg ">Find
           Out
           More</a>
       </div>
@@ -158,7 +158,7 @@
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8 ">
-    <app-video class="dReveal" *ngFor="let data of videoContent" [data]="data"></app-video>
+    <!-- <app-video class="dReveal" *ngFor="let data of videoContent" [data]="data"></app-video> -->
   </div>
 </div>
 <hr>
@@ -183,9 +183,13 @@
     </div>
   </div>
 </div>
-
-<div id="" class="bg-sec">
-  <div class="container text-white py-20 flex lg:flex-row flex-col gap-10 items-center lg:items-stretch">
+<!-- <iframe class="aspect-video object-cover w-full" src="https://www.youtube.com/embed/nFDiweNppHc"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe> -->
+<div class="bg-sec pb-20">
+  <div
+    class="container text-white py-20 flex lg:flex-row flex-col gap-10 items-center lg:items-stretch border-b border-white">
     <div class="max-w-lg text-center lg:text-left">
       <img class="w-16 md:w-20 mx-auto lg:ml-0 dReveal" src="assets/services/videoplay.svg" alt="">
       <h2 class="text-3xl md:text-4xl py-10 dReveal uppercase">Social Media <br>
@@ -197,6 +201,8 @@
         want to do is spend your precious free time editing, posting or worrying about your online presence. From high
         speed edits to slow build ups or engagement reels, let us handle your social media content so that you can
         unwind and do what you do best - creating Art.</p>
+      <button class="btn border mt-11 dReveal bg-sec border-white text-white" (click)="activeForm = true">Let’s
+        Chat</button>
     </div>
     <img class="hidden lg:block dReveal" src="assets/arrow.svg" alt="">
     <img class="lg:hidden dReveal" src="assets/arrow2.svg" alt="">
@@ -209,24 +215,59 @@
         <span class="lg:text-3xl text-2xl uppercase">{{o.name}}</span>
       </div>
     </div>
+
+  </div>
+  <div class="md:text-[40px] text-[28px] font-extrabold text-white mt-12 text-center">VIDEO EXAMPLES</div>
+  <swiper-container class="text-white swiper py-20" init="false">
+    <swiper-slide *ngFor="let video of videosSlides" class="w-4/6 mx-auto "> <iframe
+        class="aspect-video object-cover w-full rounded-xl border border-neutral-100" [src]="video | safe"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <!-- <img class="aspect-video object-cover " src="../assets/asd.jpg" alt=""> -->
+    </swiper-slide>
+
+
+
+
+
+  </swiper-container>
+  <div class="text-white flex justify-center gap-10">
+    <div class="prev"><img src="../assets/left-btn.svg" alt=""></div>
+    <div class="next rotate-180"><img src="../assets/left-btn.svg" alt=""></div>
   </div>
 </div>
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <app-video class="dReveal" *ngFor="let data of videoContent2" [data]="data"></app-video>
+    <app-video (openForm)="activeForm = $event" class="dReveal" *ngFor="let data of videoContent2"
+      [data]="data"></app-video>
   </div>
 </div>
 <hr>
 <div id="softwear">
   <div class="container py-20 grid gap-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-    <div class="border-l-8 pl-5 border-sec text-3xl font-extrabold lg:text-4xl h-max py-5  dReveal">
-      SOFTWARE <br>
-      BENEFITS
+    <div
+      class="text-3xl font-extrabold lg:text-4xl py-5 dReveal flex justify-center items-center md:items-start h-full flex-col">
+      <div>
+        SOFTWARE <br>
+        BENEFITS
+
+      </div>
+      <div class="gap-1 mt-2 border-b-2 border-transparent hover:border-sec w-fit hidden md:flex">
+        <span class="text-lg font-semibold">Find Our More </span>
+        <img src="assets/r-up-btn.svg" alt="">
+      </div>
     </div>
     <div *ngFor="let benefit of benefits" class="p-5 bg-sec rounded-3xl text-white dReveal">
-      <h2 class="text-primary pb-5 text-xl md:text-2xl font-bold  ">{{benefit.title1}}<br>{{benefit.title}}</h2>
+      <img src="assets/benefits/{{benefit.img}}.svg" alt="">
+      <h2 class="text-primary pb-5 text-xl md:text-2xl font-bold mt-6">{{benefit.title1}}<br>{{benefit.title}}</h2>
       <p class="">{{benefit.des}}</p>
+
+    </div>
+    <div class="gap-1 mt-2 border-b-2 border-transparent hover:border-sec w-fit md:hidden mx-auto flex">
+      <span class="text-lg font-semibold">Find Our More </span>
+      <img src="assets/r-up-btn.svg" alt="">
     </div>
   </div>
 </div>

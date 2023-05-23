@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
   @Input() data: any;
+  @Output() openForm = new EventEmitter<any>();
   constructor() {}
-
+  open() {
+    this.openForm.emit(true);
+  }
   ngOnInit(): void {}
 }
