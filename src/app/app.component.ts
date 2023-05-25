@@ -226,7 +226,7 @@ export class AppComponent implements OnInit {
       name: 'Clientele',
       icon: 'people.svg',
       dis: `A software where you can manage everything from bookings, payments, reviews, and more.`,
-      to: `#softwear`,
+      to: `#`,
     },
     {
       name: 'Google Business',

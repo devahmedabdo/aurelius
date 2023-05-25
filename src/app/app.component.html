@@ -1,7 +1,7 @@
 <header class="relative py-2">
   <div class="container flex items-center justify-between">
     <a id="home" href="">
-      <img class="w-40 md:w-56" src="assets/logo.png" alt="logo">
+      <img class="w-40 md:w-52" src="assets/logo.png" alt="logo">
     </a>
     <nav>
       <ul [ngClass]="{active:activeMenu}" class="flex font-medium text-lg gap-12 ">
@@ -43,8 +43,9 @@
 <div class="landing py-10 dReveal">
   <div class="container flex items-center lg:flex-row flex-col gap-10 lg:gap-0">
     <div class="lg:w-1/2 text-center lg:text-left">
-      <h1 class="text-3xl md:text-[45px] leading-tight font-extrabold py-7 uppercase">
-        Predictable Income to plan your future comes from Igniting your Tattoo Studio’s Online Presence
+      <h1 class="text-3xl md:text-6xl font-extrabold py-7 uppercase">
+        Ignite your
+        Tattoo Studio’s online presence
       </h1>
       <p class="md:text-lg font-semibold">Unleash your tattoo studio's potential with our all-in-one
         marketing solutions, transforming your online presence
@@ -147,7 +148,7 @@
         </h3>
         <p class="text-sm md:text-lg h-24">
           {{service.dis }}</p>
-        <a href="{{service.to}}"
+        <a href="{{service.to}}" (click)="service.to == '#'?activeForm=true:''"
           class="py-3 px-8 rounded-lg border border-white duration-300 hover:bg-white hover:text-sec md:text-lg ">Find
           Out
           More</a>
