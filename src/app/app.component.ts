@@ -83,7 +83,7 @@ export class AppComponent implements OnInit {
       // effect: 'coverflow',
       grabCursor: true,
       speed: 1000,
-      // spaceBetween: 50,
+      spaceBetween: 20,
       // coverflowEffect: {
       //   rotate: 50,
       //   stretch: 0,
