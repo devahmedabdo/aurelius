@@ -159,7 +159,8 @@
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8 ">
-    <!-- <app-video class="dReveal" *ngFor="let data of videoContent" [data]="data"></app-video> -->
+    <app-video class="dReveal" (openForm)="activeForm = $event" *ngFor="let data of videoContent"
+      [data]="data"></app-video>
   </div>
 </div>
 <hr>
@@ -184,10 +185,6 @@
     </div>
   </div>
 </div>
-<!-- <iframe class="aspect-video object-cover w-full" src="https://www.youtube.com/embed/nFDiweNppHc"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe> -->
 <div class="bg-sec pb-20">
   <div
     class="container text-white py-20 flex lg:flex-row flex-col gap-10 items-center lg:items-stretch border-b border-white">
@@ -205,7 +202,7 @@
       <button class="btn border mt-11 dReveal bg-sec border-white text-white" (click)="activeForm = true">Let’s
         Chat</button>
     </div>
-    <img class="hidden lg:block dReveal" src="assets/arrow.svg" alt="">
+    <img class="hidden lg:block relative top-24 dReveal" src="assets/arrow.svg" alt="">
     <img class="lg:hidden dReveal" src="assets/arrow2.svg" alt="">
     <div class="flex flex-col justify-between gap-20 lg:gap-0">
       <div class="flex gap-10 font-extrabold items-center flex-col lg:flex-row dReveal"
@@ -220,12 +217,11 @@
   </div>
   <div class="md:text-[40px] text-[28px] font-extrabold text-white mt-12 text-center">VIDEO EXAMPLES</div>
   <swiper-container class="text-white swiper py-20" init="false">
-    <swiper-slide *ngFor="let video of videosSlides" class="w-4/6 mx-auto "> <iframe
+    <swiper-slide *ngFor="let video of videosSlides" class="w-4/6 mx-auto"> <iframe
         class="aspect-video object-cover w-full rounded-xl border border-neutral-100" [src]="video | safe"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
-      <!-- <img class="aspect-video object-cover " src="../assets/asd.jpg" alt=""> -->
     </swiper-slide>
 
 
@@ -255,7 +251,8 @@
         BENEFITS
 
       </div>
-      <div class="gap-1 mt-2 border-b-2 border-transparent hover:border-sec w-fit hidden md:flex">
+      <div class="gap-1 mt-4 border-b-2 border-transparent border-sec w-fit hidden md:flex cursor-pointer"
+        (click)="activeForm =true">
         <span class="text-lg font-semibold">Find Our More </span>
         <img src="assets/r-up-btn.svg" alt="">
       </div>
