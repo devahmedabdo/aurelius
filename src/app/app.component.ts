@@ -82,6 +82,7 @@ export class AppComponent implements OnInit {
     const swiperParams = {
       // effect: 'coverflow',
       grabCursor: true,
+      speed: 1000,
       // spaceBetween: 50,
       // coverflowEffect: {
       //   rotate: 50,

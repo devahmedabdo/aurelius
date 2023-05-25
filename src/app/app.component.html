@@ -223,12 +223,8 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </swiper-slide>
-
-
-
-
-
   </swiper-container>
+
   <div class="text-white flex justify-center gap-10">
     <div class="prev"><img src="../assets/left-btn.svg" alt=""></div>
     <div class="next rotate-180"><img src="../assets/left-btn.svg" alt=""></div>
@@ -251,8 +247,7 @@
         BENEFITS
 
       </div>
-      <div class="gap-1 mt-4 border-b-2 border-transparent border-sec w-fit hidden md:flex cursor-pointer"
-        (click)="activeForm =true">
+      <div class="gap-1 mt-4 border-b-2 border-sec  w-fit hidden md:flex cursor-pointer" (click)="activeForm =true">
         <span class="text-lg font-semibold">Find Our More </span>
         <img src="assets/r-up-btn.svg" alt="">
       </div>
@@ -263,7 +258,7 @@
       <p class="">{{benefit.des}}</p>
 
     </div>
-    <div class="gap-1 mt-2 border-b-2 border-transparent hover:border-sec w-fit md:hidden mx-auto flex">
+    <div class="gap-1 mt-2 border-b-2 border-sec w-fit md:hidden mx-auto flex" (click)="activeForm =true">
       <span class="text-lg font-semibold">Find Our More </span>
       <img src="assets/r-up-btn.svg" alt="">
     </div>
