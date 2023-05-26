@@ -74,6 +74,7 @@
           <select name="job" class="w-full" #select [(ngModel)]="data.job">
             <option value="artist" selected>Artist</option>
             <option value="studio-owner">Studio Owner</option>
+            <option value="both">Both</option>
           </select>
         </div>
         <div [@lReveal] *ngIf="step == 1" class="w-full absolute">
@@ -159,8 +160,8 @@
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8 ">
-    <app-video class="dReveal" (openForm)="activeForm = $event" *ngFor="let data of videoContent"
-      [data]="data"></app-video>
+    <!-- <app-video class="dReveal" (openForm)="activeForm = $event" *ngFor="let data of videoContent"
+      [data]="data"></app-video> -->
   </div>
 </div>
 <hr>
@@ -233,8 +234,8 @@
 <hr>
 <div id="videoContent">
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <app-video (openForm)="activeForm = $event" class="dReveal" *ngFor="let data of videoContent2"
-      [data]="data"></app-video>
+    <!-- <app-video (openForm)="activeForm = $event" class="dReveal" *ngFor="let data of videoContent2"
+      [data]="data"></app-video> -->
   </div>
 </div>
 <hr>
@@ -247,10 +248,10 @@
         BENEFITS
 
       </div>
-      <div class="gap-1 mt-4 border-b-2 border-sec  w-fit hidden md:flex cursor-pointer" (click)="activeForm =true">
+      <!-- <div class="gap-1 mt-4 border-b-2 border-sec  w-fit hidden md:flex cursor-pointer" (click)="activeForm =true">
         <span class="text-lg font-semibold">Find Our More </span>
         <img src="assets/r-up-btn.svg" alt="">
-      </div>
+      </div> -->
     </div>
     <div *ngFor="let benefit of benefits" class="p-5 bg-sec rounded-3xl text-white dReveal">
       <img src="assets/benefits/{{benefit.img}}.svg" alt="">
@@ -258,10 +259,16 @@
       <p class="">{{benefit.des}}</p>
 
     </div>
-    <div class="gap-1 mt-2 border-b-2 border-sec w-fit md:hidden mx-auto flex" (click)="activeForm =true">
+    <!-- <div class="gap-1 mt-2 border-b-2 border-sec w-fit md:hidden mx-auto flex" (click)="activeForm =true">
       <span class="text-lg font-semibold">Find Our More </span>
       <img src="assets/r-up-btn.svg" alt="">
-    </div>
+    </div> -->
+  </div>
+  <div class="pb-10 text-center">
+    <h2 class="font-semibold text-lg md:text-xl dReveal">For those who have a curiosity to explore further about our
+      software
+    </h2>
+    <button class="btn mt-10 dReveal" (click)="activeForm = true">Let’s Chat</button>
   </div>
 </div>
 <hr>
@@ -272,5 +279,6 @@
   <a class="btn text-xl md:text-3xl md:px-20 px-3  " href="">SCHEDULE A CALL WITH US</a>
 </div>
 <hr>
-<div class="text-center py-3 text-xs md:text-sm">aureliusgrow | all rights reserved {{year}} privacy policy, terms
+<div class="text-center py-3 text-xs md:text-sm">aureliusgrow | all rights reserved {{year}} <a href="">privacy policy,
+    terms</a>
 </div>

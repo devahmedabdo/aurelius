@@ -1,7 +1,12 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+import Swiper, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  SwiperOptions,
+} from 'swiper';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,7 +37,7 @@ import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 })
 export class AppComponent implements OnInit {
   ele!: ElementRef<any>;
-  title = 'Aurelis Grow';
+  title = 'Aurelius Grow';
   constructor(private http: HttpClient) {
     window.addEventListener('scroll', () => {
       let animationClasses = document.querySelectorAll(
@@ -63,60 +68,52 @@ export class AppComponent implements OnInit {
     window.addEventListener('scroll', () => {
       this.activeMenu = false;
     });
-    // new Swiper('.swiper', {
-    //   // Install modules
-    //   slidesPerView: 1,
-    //   spaceBetween: 50,
 
-    //   breakpoints: {
-    //     768: {
-    //       slidesPerView: 3,
-    //       spaceBetween: 50,
-    //     },
-    //   },
-    //   // ...
-    // });
     const swiperEl: any = document.querySelector('swiper-container');
-
-    // swiper parameters
-    const swiperParams = {
-      // effect: 'coverflow',
+    let firstTime = true;
+    const swiperParams: SwiperOptions = {
       grabCursor: true,
       speed: 1000,
       spaceBetween: 20,
-      // coverflowEffect: {
-      //   rotate: 50,
-      //   stretch: 0,
-      //   depth: 100,
-      //   modifier: 1,
-      //   slideShadows: true,
-      // },
-      slidesPerView: 'auto',
+      loop: true,
+      initialSlide: 2,
+      slidesPerView: 2,
       centeredSlides: true,
-      // breakpoints: {
-      //   768: {
-      //     slidesPerView: 3,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3,
-      //   },
-      // },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+      },
       navigation: {
         nextEl: '.next',
         prevEl: '.prev',
       },
       on: {
         init() {
-          // ...
+          swiperParams.initialSlide = 1;
+          Object.assign(swiperEl, swiperParams);
+          swiperEl.initialize();
+          setTimeout(() => {
+            let x = document.querySelector('.prev') as HTMLElement;
+            x.click();
+          }, 1000);
         },
       },
     };
-
+    // const swiper = new Swiper('.swiper', swiperParams);
     // now we need to assign all parameters to Swiper element
     Object.assign(swiperEl, swiperParams);
 
     // and now initialize it
     swiperEl.initialize();
+
+    // const swiper: any = document.querySelector('.swiper')?.swiper;
+
+    // Now you can use all slider methods like
+    // swiper.slideNext();
   }
   submit() {
     const httpOptions = {
@@ -156,9 +153,6 @@ export class AppComponent implements OnInit {
     'https://www.youtube.com/embed/nFDiweNppHc',
   ];
   increasStep() {
-    // console.log(this.step);
-    // console.log(this.data);
-    // console.log(this.step == 2 && !this.data.location);
     if (
       (this.step == 0 && !this.data.job) ||
       (this.step == 1 && !this.data.studioName) ||
@@ -168,7 +162,6 @@ export class AppComponent implements OnInit {
       (this.step == 5 && !this.data.email) ||
       (this.step == 6 && !this.data.phone)
     ) {
-      console.log(this.step, !this.data.location);
       return;
     } else {
       if (this.data.job == 'artist' && this.step == 0) {
@@ -178,24 +171,11 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
-  // header
-  // header
-
   step: number = 0;
-  scrollInto(ele: HTMLElement) {
-    if (ele) {
-      ele.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-      });
-    }
-  }
   activeMenu: boolean = false;
   reflectActiveMenu() {
     this.activeMenu = !this.activeMenu;
   }
-
   services: any = [
     {
       name: 'Paid Advertising',
