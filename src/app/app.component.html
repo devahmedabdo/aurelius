@@ -43,7 +43,7 @@
 <div class="landing py-10 dReveal">
   <div class="container flex items-center lg:flex-row flex-col gap-10 lg:gap-0">
     <div class="lg:w-1/2 text-center lg:text-left">
-      <h1 class="text-3xl md:text-6xl font-extrabold py-7 uppercase">
+      <h1 class="text-4xl md:text-6xl font-extrabold py-7 uppercase">
         Ignite your
         Tattoo Studio’s online presence
       </h1>
@@ -66,7 +66,6 @@
   <form #form class="bg-gray rounded-3xl p-8 relative max-full w-[590px] h-60 flex justify-between flex-col">
     <h3 class="text-4xl font-extrabold">FILL IN THE <br>
       EMPTY BOXES</h3>
-
     <div class="relative flex  gap-10 items-center w-full z-0 ">
       <div class="flex-grow relative h-full">
         <div [@lReveal] *ngIf="step == 0" class="w-full absolute">
@@ -171,7 +170,6 @@
       <img src="assets/advertise/advertise.svg" alt="">
     </div>
     <div class="border">
-
     </div>
     <div class="md:w-1/2 mx-auto text-center lg:text-left">
       <img class="dReveal h-16 md:w-20 my-5 mx-auto lg:ml-0" src="assets/advertise/meta.svg" alt="">
@@ -218,8 +216,8 @@
   </div>
   <div class="md:text-[40px] text-[28px] font-extrabold text-white mt-12 text-center">VIDEO EXAMPLES</div>
   <swiper-container class="text-white swiper py-20" init="false">
-    <swiper-slide *ngFor="let video of videosSlides" class="w-4/6 mx-auto"> <iframe
-        class="aspect-video object-cover w-full rounded-xl border border-neutral-100" [src]="video | safe"
+    <swiper-slide *ngFor="let video of videosSlides" class="md:w-4/6 w-11/12 mx-auto">
+      <iframe class="aspect-video object-cover w-full rounded-xl border border-neutral-100" [src]="video | safe"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
