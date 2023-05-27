@@ -77,9 +77,12 @@ export class AppComponent implements OnInit {
       spaceBetween: 20,
       loop: true,
       initialSlide: 2,
-      slidesPerView: 2,
+      // slidesPerView: 2,
       centeredSlides: true,
       breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
         768: {
           slidesPerView: 2,
         },
