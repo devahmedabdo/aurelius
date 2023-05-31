@@ -138,6 +138,7 @@ export class AppComponent implements OnInit {
         },
       });
   }
+  clients: any[] = [`logo`];
   activeForm: boolean = false;
   data: any = {
     job: null,
