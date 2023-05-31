@@ -117,6 +117,10 @@
     trusted clients
   </div>
   <div class="overflow-hidden md:w-3/4 flex relative items-center h-28 gap-20 w-[600px]">
+    <img style="--d:{{i}}" *ngFor="let logo of ['','','','','','','',''] ; let i = index"
+      class="w-28 absolute min-w-[112px] movement left-full" src="assets/logo{{i+1}}.png" alt="client avatar">
+  </div>
+  <!-- <div class="overflow-hidden md:w-3/4 flex relative items-center h-28 gap-20 w-[600px]">
     <div class="flex w-full absolute left-0 justify-around movement gap-10   ">
       <img *ngFor="let logo of ['','','','','','','',''] ; let i = index" class="w-28 min-w-[112px]"
         src="assets/logo{{i+1}}.png" alt="">
@@ -125,7 +129,7 @@
       <img *ngFor="let logo of ['','','','','','','',''] ; let i = index" class="w-28 min-w-[112px]"
         src="assets/logo{{i+1}}.png" alt="">
     </div>
-  </div>
+  </div> -->
 </div>
 <hr>
 
