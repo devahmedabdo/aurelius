@@ -150,11 +150,10 @@ export class AppComponent implements OnInit {
     location: null,
   };
   videosSlides: any[] = [
-    'https://www.youtube.com/embed/nFDiweNppHc',
-    'https://www.youtube.com/embed/nFDiweNppHc',
-    'https://www.youtube.com/embed/nFDiweNppHc',
-    'https://www.youtube.com/embed/nFDiweNppHc',
-    'https://www.youtube.com/embed/nFDiweNppHc',
+    'https://www.youtube.com/embed/jMW8CtkaPgI',
+    'https://www.youtube.com/embed/jCTxWpYHIbQ',
+    'https://www.youtube.com/embed/4abvqPpUcxw',
+    'https://www.youtube.com/embed/1WWmR3zC29g',
   ];
   increasStep() {
     if (
