@@ -224,7 +224,7 @@ export class AppComponent implements OnInit {
       name: `Simon`,
       des: `“Im booked out two months in advance which 
       has never happened before”`,
-      link: `https://www.youtube.com/embed/nFDiweNppHc`,
+      link: `https://www.youtube.com/embed/JQ31-ga5H0s`,
       studioName: `Eddisons Tattoo Emporium`,
     },
     {
@@ -240,7 +240,7 @@ export class AppComponent implements OnInit {
       name: `Paul`,
       des: `“Within a few days the increase in customers 
       and attention to the studio was really noticeable”`,
-      link: `https://www.youtube.com/embed/nFDiweNppHc`,
+      link: `https://www.youtube.com/embed/h_t3oo9MOyQ`,
       studioName: `Court Street Tattoo`,
     },
     {
