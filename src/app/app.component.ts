@@ -231,7 +231,7 @@ export class AppComponent implements OnInit {
       name: `Charles`,
       des: `“We are getting so many clients, I had to 
       turn off the ads”`,
-      link: `https://www.youtube.com/embed/nFDiweNppHc`,
+      link: `https://www.youtube.com/embed/XYIjZfMp-78`,
       studioName: `Brotherhood Studio`,
     },
   ];
@@ -247,7 +247,7 @@ export class AppComponent implements OnInit {
       name: `Hollie Bardin`,
       des: `“My client base has grown to the point where I’ve 
       actually given up my full time job”`,
-      link: `https://www.youtube.com/embed/nFDiweNppHc`,
+      link: `https://www.youtube.com/embed/32Zno2LlEJM`,
       studioName: `Hollie B Laser`,
     },
   ];
