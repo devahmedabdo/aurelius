@@ -153,7 +153,8 @@ export class AppComponent implements OnInit {
 
     'https://www.youtube.com/embed/eLxRAj-bD0o',
     'https://www.youtube.com/embed/TGZkt-3Ujn0',
-    'https://www.youtube.com/embed/BhyMMzMosL4',
+'https://www.youtube.com/embed/BhyMMzMosL4', 'https://www.youtube.com/embed/lSQTgeDvOlA',
+
   ];
   increasStep() {
     if (
