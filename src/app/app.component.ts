@@ -119,24 +119,19 @@ export class AppComponent implements OnInit {
     // swiper.slideNext();
   }
   submit() {
-    const httpOptions = {
-      headers: new HttpHeaders({
+    fetch('https://formsubmit.co/ajax/oisin@maureliusgrow.com', {
+      method: 'POST',
+      headers: {
         'Content-Type': 'application/json',
-        dataType: 'application/json',
-        'Accept-Language': 'en',
-      }),
-    };
-    this.http
-      .post(
-        'https://formsubmit.co/galal142004mm@gmail.com',
-        this.data,
-        httpOptions
-      )
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-      });
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(this.data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.activeForm = false;
+      })
+      .catch((error) => (this.activeForm = false));
   }
   clients: any[] = [`logo`];
   activeForm: boolean = false;
@@ -148,12 +143,17 @@ export class AppComponent implements OnInit {
     email: null,
     phone: null,
     location: null,
+    instagramProfile: null,
   };
   videosSlides: any[] = [
-    'https://www.youtube.com/embed/jMW8CtkaPgI',
-    'https://www.youtube.com/embed/jCTxWpYHIbQ',
+    // 'https://www.youtube.com/embed/jMW8CtkaPgI',
+    // 'https://www.youtube.com/embed/jCTxWpYHIbQ',
     'https://www.youtube.com/embed/4abvqPpUcxw',
-    'https://www.youtube.com/embed/1WWmR3zC29g',
+    // 'https://www.youtube.com/embed/1WWmR3zC29g',
+
+    'https://www.youtube.com/embed/eLxRAj-bD0o',
+    'https://www.youtube.com/embed/TGZkt-3Ujn0',
+    'https://www.youtube.com/embed/BhyMMzMosL4',
   ];
   increasStep() {
     if (
@@ -163,7 +163,8 @@ export class AppComponent implements OnInit {
       (this.step == 3 && !this.data.benefits) ||
       (this.step == 4 && !this.data.fullName) ||
       (this.step == 5 && !this.data.email) ||
-      (this.step == 6 && !this.data.phone)
+      (this.step == 6 && !this.data.instagramProfile) ||
+      (this.step == 7 && !this.data.phone)
     ) {
       return;
     } else {

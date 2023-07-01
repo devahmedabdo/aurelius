@@ -3,7 +3,7 @@
     <a id="home" href="">
       <img class="w-40 md:w-52" src="assets/logo.png" alt="logo">
     </a>
-    <nav>
+    <!-- <nav>
       <ul [ngClass]="{active:activeMenu}" class="flex font-medium text-lg gap-12 ">
         <li style="--d:1">
           <a href="#home">
@@ -26,17 +26,17 @@
           </a>
         </li>
       </ul>
-    </nav>
-    <a href="https://www.instagram.com/aureliusgrow/" class="hidden md:block insta">
+    </nav> -->
+    <a href="https://www.instagram.com/aureliusgrow/">
       <img src="../assets/instagram.svg" alt="">
     </a>
 
-    <div class="menu-icon w-8 h-8 flex flex-col duration-300 gap-2 items-end" [ngClass]="{active:activeMenu}"
+    <!-- <div class="menu-icon w-8 h-8 flex flex-col duration-300 gap-2 items-end" [ngClass]="{active:activeMenu}"
       (click)="reflectActiveMenu()">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </div> -->
   </div>
 </header>
 <hr>
@@ -63,7 +63,8 @@
     (click)="activeForm = false ; step = 0 ">
   </button>
 
-  <form #form class="bg-gray rounded-3xl p-8 relative max-full w-[590px] h-60 flex justify-between flex-col">
+  <form #form="ngForm" action="https://formsubmit.co/bihamihe@mailgolem.com" method="POST"
+    class="bg-gray rounded-3xl p-8 relative max-full w-[590px] h-60 flex justify-between flex-col">
     <h3 class="text-4xl font-extrabold">FILL IN THE <br>
       EMPTY BOXES</h3>
     <div class="relative flex  gap-10 items-center w-full z-0 ">
@@ -97,14 +98,18 @@
           <input type="email" name="email" [(ngModel)]="data.email" class="w-full">
         </div>
         <div [@lReveal] *ngIf="step == 6" class="w-full absolute">
+          <label for="">Your Instagram Profile</label>
+          <input type="text" name="instagramProfile" [(ngModel)]="data.instagramProfile" class="w-full">
+        </div>
+        <div [@lReveal] *ngIf="step == 7" class="w-full absolute">
           <label for="">Your Phone Number</label>
           <input type="tel" name="phone" [(ngModel)]="data.phone" class="w-full">
         </div>
       </div>
-      <button [disabled]="" (click)="increasStep()" *ngIf="step < 6"
+      <button type="button" [disabled]="" (click)="increasStep()" *ngIf="step < 7"
         class="bg-sec rounded-full flex justify-center items-center p-2 mt-4 "><img src="assets/arrowdown.png"
           alt=""></button>
-      <button *ngIf="step == 6" type="submit" (click)="submit()"
+      <button *ngIf="step == 7" type="submit" (click)="submit()"
         class="bg-primary rounded-full flex justify-center items-center p-2  mt-4"><img src="assets/arrowdown.png"
           alt=""></button>
     </div>
@@ -117,18 +122,18 @@
     trusted clients
   </div>
   <div class="overflow-hidden md:w-3/4 flex relative items-center h-28 gap-20 w-[600px]">
-    <img style="--d:{{i}}" *ngFor="let logo of ['','','','','','','',''] ; let i = index"
-      class="w-28 absolute min-w-[112px] movement left-full" src="assets/logo{{i+1}}.png" alt="client avatar">
+    <div class="absolute left-full movement">
+      <img *ngFor="let logo of ['','','','','','','','','',''] ; let i = index" class="w-28   min-w-[112px]   "
+        src="assets/logo{{i+1}}.png" alt="client avatar">
+    </div>
+    <div class="absolute left-full movement ">
+      <img *ngFor="let logo of ['','','','','','','','','',''] ; let i = index" class="w-28   min-w-[112px]  "
+        src="assets/logo{{i+1}}.png" alt="client avatar">
+    </div>
   </div>
   <!-- <div class="overflow-hidden md:w-3/4 flex relative items-center h-28 gap-20 w-[600px]">
-    <div class="flex w-full absolute left-0 justify-around movement gap-10   ">
-      <img *ngFor="let logo of ['','','','','','','',''] ; let i = index" class="w-28 min-w-[112px]"
-        src="assets/logo{{i+1}}.png" alt="">
-    </div>
-    <div class="flex w-full absolute left-full   md:translate-x-0 justify-around movement2 gap-10 ">
-      <img *ngFor="let logo of ['','','','','','','',''] ; let i = index" class="w-28 min-w-[112px]"
-        src="assets/logo{{i+1}}.png" alt="">
-    </div>
+    <img [style]="'--d:'+i" *ngFor="let logo of ['','','','','','','','','',''] ; let i = index"
+      class="w-28 absolute min-w-[112px] movement left-full" src="assets/logo{{i+1}}.png" alt="client avatar">
   </div> -->
 </div>
 <hr>
@@ -216,7 +221,6 @@
     </div>
 
   </div>
-  <!-- <div class="md:text-[40px] text-[28px] font-extrabold text-white mt-12 text-center">VIDEO EXAMPLES</div> -->
   <swiper-container class="text-white swiper py-20" init="false">
     <swiper-slide *ngFor="let video of videosSlides" class="md:w-4/6 w-1/2 mx-auto">
       <iframe class="aspect-video object-cover w-full rounded-xl border border-neutral-100" [src]="video | safe"
@@ -248,10 +252,7 @@
         BENEFITS
 
       </div>
-      <!-- <div class="gap-1 mt-4 border-b-2 border-sec  w-fit hidden md:flex cursor-pointer" (click)="activeForm =true">
-        <span class="text-lg font-semibold">Find Our More </span>
-        <img src="assets/r-up-btn.svg" alt="">
-      </div> -->
+
     </div>
     <div *ngFor="let benefit of benefits" class="p-5 bg-sec rounded-3xl text-white dReveal">
       <img src="assets/benefits/{{benefit.img}}.svg" alt="">
@@ -259,15 +260,10 @@
       <p class="">{{benefit.des}}</p>
 
     </div>
-    <!-- <div class="gap-1 mt-2 border-b-2 border-sec w-fit md:hidden mx-auto flex" (click)="activeForm =true">
-      <span class="text-lg font-semibold">Find Our More </span>
-      <img src="assets/r-up-btn.svg" alt="">
-    </div> -->
+
   </div>
   <div class="pb-10 text-center">
-    <!-- <h2 class="font-semibold text-lg md:text-xl dReveal">For those who have a curiosity to explore further about our
-      software
-    </h2> -->
+
     <button class="btn mt-5 dReveal" (click)="activeForm = true">Let’s Chat</button>
   </div>
 </div>
