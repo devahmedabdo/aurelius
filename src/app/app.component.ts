@@ -147,14 +147,14 @@ export class AppComponent implements OnInit {
   };
   videosSlides: any[] = [
     // 'https://www.youtube.com/embed/jMW8CtkaPgI',
-    // 'https://www.youtube.com/embed/jCTxWpYHIbQ',
+    // 'https://www.youtube.com/embed/jCTxWpYHIbQ',eLxRAj-bD0o
+    'https://www.youtube.com/embed/eLxRAj-bD0o',
     'https://www.youtube.com/embed/4abvqPpUcxw',
     // 'https://www.youtube.com/embed/1WWmR3zC29g',
 
-    'https://www.youtube.com/embed/eLxRAj-bD0o',
     'https://www.youtube.com/embed/TGZkt-3Ujn0',
-'https://www.youtube.com/embed/BhyMMzMosL4', 'https://www.youtube.com/embed/lSQTgeDvOlA',
-
+    'https://www.youtube.com/embed/BhyMMzMosL4',
+    'https://www.youtube.com/embed/lSQTgeDvOlA',
   ];
   increasStep() {
     if (
