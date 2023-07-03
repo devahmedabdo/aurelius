@@ -168,7 +168,7 @@
   </div>
 </div>
 <hr>
-<div id="videoContent">
+<div>
   <div class="container py-20 grid grid-cols-1 md:grid-cols-2 gap-8 ">
     <app-video class="dReveal" (openForm)="activeForm = $event" *ngFor="let data of videoContent"
       [data]="data"></app-video>
@@ -195,7 +195,7 @@
     </div>
   </div>
 </div>
-<div class="bg-sec pb-20">
+<div id="videoContent" class="bg-sec pb-20">
   <div
     class="container text-white py-20 flex lg:flex-row flex-col gap-10 items-center lg:items-stretch border-b border-white">
     <div class="max-w-lg text-center lg:text-left">
