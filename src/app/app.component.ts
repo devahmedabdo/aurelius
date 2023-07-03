@@ -160,11 +160,11 @@ export class AppComponent implements OnInit {
     if (
       (this.step == 0 && !this.data.job) ||
       (this.step == 1 && !this.data.studioName) ||
-      (this.step == 2 && !this.data.location) ||
-      (this.step == 3 && !this.data.benefits) ||
-      (this.step == 4 && !this.data.fullName) ||
-      (this.step == 5 && !this.data.email) ||
-      (this.step == 6 && !this.data.instagramProfile) ||
+      (this.step == 3 && !this.data.location) ||
+      (this.step == 4 && !this.data.benefits) ||
+      (this.step == 5 && !this.data.fullName) ||
+      (this.step == 6 && !this.data.email) ||
+      (this.step == 2 && !this.data.instagramProfile) ||
       (this.step == 7 && !this.data.phone)
     ) {
       return;
