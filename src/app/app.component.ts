@@ -12,7 +12,7 @@ import Swiper, {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('lReveal', [
+    trigger('dReveal', [
       transition(':enter', [
         style({ transform: 'translateY(20px) ', opacity: 1 }),
         animate(
@@ -36,6 +36,7 @@ import Swiper, {
   ],
 })
 export class AppComponent implements OnInit {
+  loading: boolean = true;
   ele!: ElementRef<any>;
   title = 'Aurelius Grow';
   constructor(private http: HttpClient) {
@@ -52,6 +53,7 @@ export class AppComponent implements OnInit {
       });
     });
     window.addEventListener('load', () => {
+      this.loading = false;
       let animationClasses = document.querySelectorAll(
         '.lReveal , .dReveal,.uReveal,.rReveal'
       );
@@ -160,11 +162,11 @@ export class AppComponent implements OnInit {
     if (
       (this.step == 0 && !this.data.job) ||
       (this.step == 1 && !this.data.studioName) ||
+      (this.step == 2 && !this.data.instagramProfile) ||
       (this.step == 3 && !this.data.location) ||
       (this.step == 4 && !this.data.benefits) ||
       (this.step == 5 && !this.data.fullName) ||
       (this.step == 6 && !this.data.email) ||
-      (this.step == 2 && !this.data.instagramProfile) ||
       (this.step == 7 && !this.data.phone)
     ) {
       return;
