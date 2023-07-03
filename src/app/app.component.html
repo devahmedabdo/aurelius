@@ -81,23 +81,23 @@
           <label for="">What is your studios name?</label>
           <input type="text" name="studio-name" [(ngModel)]="data.studioName" class="w-full">
         </div>
-        <div [@lReveal] *ngIf="step == 2" class="w-full absolute">
+        <div [@lReveal] *ngIf="step == 3" class="w-full absolute">
           <label for="">Where are you located</label>
           <input type="text" class="w-full" [(ngModel)]="data.location" name="location">
         </div>
-        <div [@lReveal] *ngIf="step == 3" class="w-full absolute">
+        <div [@lReveal] *ngIf="step == 4" class="w-full absolute">
           <label for="">What would benefit your studio the most?</label>
           <input type="text" class="w-full" name="benefits" [(ngModel)]="data.benefits">
         </div>
-        <div [@lReveal] *ngIf="step == 4" class="w-full absolute">
+        <div [@lReveal] *ngIf="step == 5" class="w-full absolute">
           <label for="">Your Full Name</label>
           <input type="text" class="w-full" name="fullName" [(ngModel)]="data.fullName">
         </div>
-        <div [@lReveal] *ngIf="step == 5" class="w-full absolute">
+        <div [@lReveal] *ngIf="step == 6" class="w-full absolute">
           <label for="">Your Email Address</label>
           <input type="email" name="email" [(ngModel)]="data.email" class="w-full">
         </div>
-        <div [@lReveal] *ngIf="step == 6" class="w-full absolute">
+        <div [@lReveal] *ngIf="step == 2" class="w-full absolute">
           <label for="">Your Instagram Profile</label>
           <input type="text" name="instagramProfile" [(ngModel)]="data.instagramProfile" class="w-full">
         </div>
