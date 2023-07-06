@@ -230,11 +230,11 @@ export class AppComponent implements OnInit {
       studioName: `Eddisons Tattoo Emporium`,
     },
     {
-      name: `Charles`,
-      des: `“We are getting so many clients, I had to 
-      turn off the ads”`,
-      link: `https://www.youtube.com/embed/XYIjZfMp-78`,
-      studioName: `Brotherhood Studio`,
+      name: `DAVE`,
+      des: `They have not only increased consultations but also 
+efficiently streamlined my social media channels.`,
+      link: `https://www.youtube.com/embed/3WTnUEjZPqc`,
+      studioName: `Renegade Tattoo`,
     },
   ];
   videoContent2: any[] = [
@@ -246,12 +246,19 @@ export class AppComponent implements OnInit {
       studioName: `Court Street Tattoo`,
     },
     {
-      name: `Hollie Bardin`,
-      des: `“My client base has grown to the point where I’ve 
-      actually given up my full time job”`,
-      link: `https://www.youtube.com/embed/32Zno2LlEJM`,
-      studioName: `Hollie B Laser`,
+      name: `Charles`,
+      des: `“We are getting so many clients, I had to 
+      turn off the ads”`,
+      link: `https://www.youtube.com/embed/XYIjZfMp-78`,
+      studioName: `Brotherhood Studio`,
     },
+    // {
+    //   name: `Hollie Bardin`,
+    //   des: `“My client base has grown to the point where I’ve
+    //   actually given up my full time job”`,
+    //   link: `https://www.youtube.com/embed/32Zno2LlEJM`,
+    //   studioName: `Hollie B Laser`,
+    // },
   ];
   socialMediaVideoContent: any[] = [
     {
