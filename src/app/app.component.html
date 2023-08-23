@@ -227,7 +227,7 @@
   </div>
   <swiper-container class="text-white swiper py-20" init="false">
     <swiper-slide *ngFor="let video of videosSlides" class="md:w-4/6 w-1/2 mx-auto">
-      <video controls class="aspect-video w-full rounded-xl border border-neutral-100"
+      <video preload="metadata" controls class="aspect-video w-full rounded-xl border border-neutral-100"
         src="assets/slides/{{video}}"></video>
     </swiper-slide>
   </swiper-container>
