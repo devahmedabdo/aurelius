@@ -148,13 +148,11 @@ export class AppComponent implements OnInit {
     instagramProfile: null,
   };
   videosSlides: any[] = [
-    'https://www.youtube.com/embed/BhyMMzMosL4',
-    'https://www.youtube.com/embed/TGZkt-3Ujn0',
-    'https://www.youtube.com/embed/lSQTgeDvOlA',
-    'https://www.youtube.com/embed/4abvqPpUcxw',
-    'https://www.youtube.com/embed/eLxRAj-bD0o',
-
-    //
+    'House of wands 2.mp4',
+    'Victorum Tattoo 2.mp4',
+    'House of wands 10.mp4',
+    'Video 3.mp4',
+    'Fed Dinero 1.mp4',
   ];
   increasStep() {
     if (
@@ -226,14 +224,14 @@ export class AppComponent implements OnInit {
       name: `Simon`,
       des: `“Im booked out two months in advance which 
       has never happened before”`,
-      link: `https://www.youtube.com/embed/JQ31-ga5H0s`,
+      link: `Simon.mp4`,
       studioName: `Eddisons Tattoo Emporium`,
     },
     {
       name: `DAVE`,
       des: `They have not only increased consultations but also 
 efficiently streamlined my social media channels.`,
-      link: `https://www.youtube.com/embed/3WTnUEjZPqc`,
+      link: `dave.mp4`,
       studioName: `Renegade Tattoo`,
     },
   ];
@@ -242,14 +240,14 @@ efficiently streamlined my social media channels.`,
       name: `Paul`,
       des: `“Within a few days the increase in customers 
       and attention to the studio was really noticeable”`,
-      link: `https://www.youtube.com/embed/h_t3oo9MOyQ`,
+      link: `TESTIMONIAL~1.mp4`,
       studioName: `Court Street Tattoo`,
     },
     {
       name: `Charles`,
       des: `“We are getting so many clients, I had to 
       turn off the ads”`,
-      link: `https://www.youtube.com/embed/XYIjZfMp-78`,
+      link: `Charles.mp4`,
       studioName: `Brotherhood Studio`,
     },
     // {
