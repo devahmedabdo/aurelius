@@ -146,32 +146,35 @@ export class AppComponent implements OnInit {
     phone: null,
     location: null,
     instagramProfile: null,
+    number_of_artist: null,
   };
   videosSlides: any[] = [
     'House of wands 2.mp4',
     'Victorum Tattoo 2.mp4',
     'House of wands 10.mp4',
     'Video 3.mp4',
-    'Fed Dinero 1.mp4',
+    // 'Fed Dinero 1.mp4',
   ];
   increasStep() {
     if (
       (this.step == 0 && !this.data.job) ||
       (this.step == 1 && !this.data.studioName) ||
-      (this.step == 2 && !this.data.instagramProfile) ||
-      (this.step == 3 && !this.data.location) ||
-      (this.step == 4 && !this.data.benefits) ||
-      (this.step == 5 && !this.data.fullName) ||
-      (this.step == 6 && !this.data.email) ||
-      (this.step == 7 && !this.data.phone)
+      (this.step == 2 && !this.data.number_of_artist) ||
+      (this.step == 3 && !this.data.instagramProfile) ||
+      (this.step == 4 && !this.data.location) ||
+      (this.step == 5 && !this.data.benefits) ||
+      (this.step == 6 && !this.data.fullName) ||
+      (this.step == 7 && !this.data.email) ||
+      (this.step == 8 && !this.data.phone)
     ) {
       return;
     } else {
-      if (this.data.job == 'artist' && this.step == 0) {
-        this.step = 2;
-      } else {
-        this.step += 1;
-      }
+      this.step += 1;
+      // if (this.data.job == 'artist' && this.step == 0) {
+      //   this.step = 2;
+      // } else {
+      //   this.step += 1;
+      // }
     }
   }
   step: number = 0;
@@ -237,11 +240,11 @@ efficiently streamlined my social media channels.`,
   ];
   videoContent2: any[] = [
     {
-      name: `Paul`,
-      des: `“Within a few days the increase in customers 
-      and attention to the studio was really noticeable”`,
+      name: `Mike`,
+      des: `“Now we're talking a $2000 tattoo all because 
+someone took the time to speak to these people”`,
       link: `TESTIMONIAL~1.mp4`,
-      studioName: `Court Street Tattoo`,
+      studioName: `Rorschach Tattoo.`,
     },
     {
       name: `Charles`,
